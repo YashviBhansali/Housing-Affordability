@@ -78,3 +78,42 @@ before cross-city comparison and modeling.
   ratio to local price index, which sidesteps the FX issue entirely).
 - **Hong Kong lending rate:** No Singapore equivalent in current dataset — remains a
   Hong Kong-only variable, standalone chart, not used in cross-city comparison.
+
+## Date — October 18 (rolling-origin CV, target: YoY price growth)
+
+5-fold expanding-window CV, ~32 usable quarters (2018Q1-2025Q4). Test RMSE (pp):
+
+| | Naive (train mean) | OLS | Ridge | Random Forest |
+|---|---|---|---|---|
+| SG mean (all folds) | 5.26 | 6.36 | 5.02 | 4.50 |
+| SG mean (excl. fold 1) | 5.76 | 7.22 | 5.59 | 4.80 |
+| HK mean (all folds) | 8.12 | 18.68 | 10.08 | 7.20 |
+| HK mean (excl. fold 1) | 8.19 | 10.06 | 8.95 | 7.64 |
+
+Findings
+- RF has the lowest mean error in both cities, but beats the naive baseline in only 2 of 5 folds in each.
+- Unregularized OLS underperforms the naive baseline on average; HK fold 1 (OLS RMSE 53.2, 7 training rows) drives most of its mean.
+- Ridge recovers much of OLS's loss, suggesting the problem is small-sample instability.
+- Conclusion: modest, inconsistent evidence that ML outperforms the statistical baseline; limited by ~32 observations.
+
+### Robustness: 4-fold expanding-window CV (min 16 training quarters, test_size = 4)
+Chosen as the primary specification because the 5-fold version trained on only 7-12 rows in early folds.
+
+| Mean RMSE (pp) | Naive | OLS | Ridge | RF |
+|---|---|---|---|---|
+| Singapore | 4.26 | 3.65 | 2.43 | 3.03 |
+| Hong Kong | 9.64 | 5.35 | 9.48 | 7.80 |
+
+Conclusion: model rankings changed between CV setups (RF best with small early folds; Ridge best in SG and OLS best in HK with larger training windows). No robust evidence that ML outperforms the statistical baseline at n ≈ 32. Linear models were competitive or better. Both setups are reported for transparency.
+### Final specification: standardized RidgeCV (4-fold, min train 16)
+| Mean RMSE (pp) | Naive | Ridge (scaled) |
+|---|---|---|
+| Singapore | 4.26 | 3.07 |
+| Hong Kong | 9.64 | 4.79 |
+
+Standardized coefficients (full sample, price YoY):
+- SG: income_yoy 2.11, cpi_yoy 1.60, covid 1.52, gdp 1.03
+- HK: hk_lending_rate -5.26, cpi_yoy 3.56, hk_gdp 3.52, covid 1.19, income_yoy 1.16
+
+Notes: unscaled Ridge (alpha fixed at 10) got SG 2.43 / HK 9.48; scaled RidgeCV is the principled version, so it is the one reported. SG: Ridge and RF are tied. HK: Ridge beats RF by ~39%. Coefficients are associations, not causal effects.
+
