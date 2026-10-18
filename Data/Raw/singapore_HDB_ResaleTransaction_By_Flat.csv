@@ -1,0 +1,124 @@
+_id,financial_year,flat_type,resale_transactions
+1,2006,1 room,22
+2,2006,2 room,314
+3,2006,3 room,9230
+4,2006,4 room,10851
+5,2006,5 room,6314
+6,2006,Executive and Multi-generation,2211
+7,2006,HUDC,92
+8,2007,1 room,19
+9,2007,2 room,269
+10,2007,3 room,8368
+11,2007,4 room,10864
+12,2007,5 room,7447
+13,2007,Executive and Multi-generation,2569
+14,2007,HUDC,76
+15,2008,1 room,17
+16,2008,2 room,247
+17,2008,3 room,8295
+18,2008,4 room,10637
+19,2008,5 room,7253
+20,2008,Executive and Multi-generation,2058
+21,2008,HUDC,44
+22,2009,1 room,13
+23,2009,2 room,400
+24,2009,3 room,10854
+25,2009,4 room,14365
+26,2009,5 room,10369
+27,2009,Executive and Multi-generation,3242
+28,2009,HUDC,77
+29,2010,1 room,19
+30,2010,2 room,530
+31,2010,3 room,8940
+32,2010,4 room,10817
+33,2010,5 room,7274
+34,2010,Executive and Multi-generation,2421
+35,2010,HUDC,60
+36,2011,1 room,14
+37,2011,2 room,414
+38,2011,3 room,7230
+39,2011,4 room,8933
+40,2011,5 room,5832
+41,2011,Executive and Multi-generation,1874
+42,2011,HUDC,34
+43,2012,1 room,15
+44,2012,2 room,567
+45,2012,3 room,6777
+46,2012,4 room,8747
+47,2012,5 room,5402
+48,2012,Executive and Multi-generation,2029
+49,2012,HUDC,42
+50,2013,1 room,10
+51,2013,2 room,581
+52,2013,3 room,5553
+53,2013,4 room,6560
+54,2013,5 room,3549
+55,2013,Executive and Multi-generation,1293
+56,2013,HUDC,6
+57,2014,1 room,19
+58,2014,2 room,408
+59,2014,3 room,5472
+60,2014,4 room,6791
+61,2014,5 room,3822
+62,2014,Executive and Multi-generation,1160
+63,2014,HUDC,1
+64,2015,1 room,9
+65,2015,2 room,291
+66,2015,3 room,5511
+67,2015,4 room,7857
+68,2015,5 room,4486
+69,2015,Executive and Multi-generation,1466
+70,2016,1 room,7
+71,2016,2 room,279
+72,2016,3 room,5509
+73,2016,4 room,8651
+74,2016,5 room,4893
+75,2016,Executive and Multi-generation,1555
+76,2017,1 room,10
+77,2017,2 room,333
+78,2017,3 room,5379
+79,2017,4 room,9154
+80,2017,5 room,5349
+81,2017,Executive and Multi-generation,1780
+82,2018,1 room,14
+83,2018,2 room,392
+84,2018,3 room,5719
+85,2018,4 room,9626
+86,2018,5 room,5854
+87,2018,Executive and Multi-generation,1871
+88,2019,1 room,8
+89,2019,2 room,517
+90,2019,3 room,6023
+91,2019,4 room,10401
+92,2019,5 room,6005
+93,2019,Executive and Multi-generation,1818
+94,2020,1 room,13
+95,2020,2 room,440
+96,2020,3 room,6072
+97,2020,4 room,10941
+98,2020,5 room,6842
+99,2020,Executive and Multi-generation,2128
+100,2021,1 room,8
+101,2021,2 room,446
+102,2021,3 room,6747
+103,2021,4 room,12972
+104,2021,5 room,7950
+105,2021,Executive and Multi-generation,2247
+106,2022,1 room,10
+107,2022,2 room,589
+108,2022,3 room,6832
+109,2022,4 room,11854
+110,2022,5 room,6785
+111,2022,Executive and Multi-generation,1871
+112,2023,1 room,6
+113,2023,2 room,741
+114,2023,3 room,6516
+115,2023,4 room,11859
+116,2023,5 room,6124
+117,2023,Executive and Multi-generation,1578
+118,2024,1 room,12
+119,2024,2 room,851
+120,2024,3 room,7130
+121,2024,4 room,12274
+122,2024,5 room,6491
+123,2024,Executive and Multi-generation,1750
