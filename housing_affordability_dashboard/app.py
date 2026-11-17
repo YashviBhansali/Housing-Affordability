@@ -175,7 +175,7 @@ st.markdown("""
 # The app.py file should be inside:
 # Housing Affordability/housing_affordability_dashboard/
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-CLEAN_DATA_DIR = PROJECT_ROOT / "data" / "clean"
+CLEAN_DATA_DIR = PROJECT_ROOT / "Data" / "Clean"
 
 SINGAPORE_FILE = CLEAN_DATA_DIR / "singapore_merged.csv"
 HONGKONG_FILE = CLEAN_DATA_DIR / "hongkong_merged.csv"
