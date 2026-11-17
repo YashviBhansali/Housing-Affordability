@@ -38,7 +38,7 @@ This is a relative index comparison, not a measure of the proportion of househol
 
 ### Predictive model comparison
 
-Mean RMSE from a four-fold rolling-origin cross-validation experiment predicting year-on-year housing-price growth. RMSE is measured in percentage points; lower values indicate lower prediction error.
+Mean RMSE from the main four-fold rolling-origin cross-validation experiment predicting year-on-year housing-price growth. RMSE is measured in percentage points; lower values indicate lower prediction error.
 
 | Model | Singapore | Hong Kong |
 |---|---:|---:|
@@ -49,7 +49,9 @@ Mean RMSE from a four-fold rolling-origin cross-validation experiment predicting
 
 Random Forest recorded the lowest mean RMSE in Singapore (3.03), narrowly ahead of Ridge Regression (3.07). Ridge Regression performed best in Hong Kong (4.79). All three model approaches improved on the naive baseline on average in this experiment.
 
-The difference between the leading Singapore models is small and should not be treated as evidence of a decisive advantage. Results also varied across validation folds.
+The difference between the leading Singapore models is only 0.04 percentage points and should not be treated as evidence of a decisive advantage. Results also varied across validation folds.
+
+**Validation note:** The dashboard may also show a separate five-fold experiment. Its results are presented separately because the validation designs differ. The four-fold and five-fold scores should not be combined or treated as directly interchangeable.
 
 ## Data sources
 
@@ -107,20 +109,22 @@ streamlit run housing_affordability_dashboard/app.py
 On Windows, activate the environment with:
 
 ```powershell
-.venv\\Scripts\\Activate.ps1
+.venv\Scripts\Activate.ps1
 ```
 
 ## Tools and technologies
 
 Python · pandas · NumPy · scikit-learn · Streamlit · Plotly · Jupyter Notebook · GitHub
 
-## Limitations
+## Limitations and interpretation
 
 - Each market has approximately 36 quarterly observations, a small sample for predictive modelling.
+- The underlying housing-price indicators differ in market coverage and methodology between Singapore and Hong Kong. The comparison is therefore most informative as an examination of relative trends within each market, rather than a direct comparison of absolute housing affordability.
 - Results can be sensitive to the selected features, preprocessing, time windows, and validation design.
+- The four-fold and five-fold experiments use different validation designs and should be interpreted separately.
 - Economic indicators may be associated with housing-price movements without causing them.
 - The index-based affordability measure does not represent the full range of household circumstances or housing costs.
-- Cross-validation results describe performance on selected historical folds; they do not guarantee future forecasting accuracy.
+- Cross-validation results describe performance on selected historical folds; they do not guarantee future forecasting accuracy or prove that a model will generalise to unseen periods.
 
 ## Portfolio documentation
 
