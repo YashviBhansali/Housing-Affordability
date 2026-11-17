@@ -756,12 +756,14 @@ elif page == "Predictive Model Lab":
     m1.metric(
         "Best Singapore model",
         sg_best_model,
-        f"{sg_best_rmse:.2f} pp RMSE",
+        f"{sg_best_rmse:.2f} pp RMSE · lower is better",
+        delta_color="off",
     )
     m2.metric(
         "Best Hong Kong model",
         hk_best_model,
-        f"{hk_best_rmse:.2f} pp RMSE",
+        f"{hk_best_rmse:.2f} pp RMSE · lower is better",
+        delta_color="off",
     )
 
     st.markdown(
