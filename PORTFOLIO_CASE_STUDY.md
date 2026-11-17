@@ -6,6 +6,10 @@ This independent research and data-science project examines how housing prices h
 
 The analysis covers quarterly observations from **2017 Q1 to 2025 Q4** (36 observations per market). The work combines public economic data, descriptive analysis, predictive modelling, and an interactive Streamlit dashboard.
 
+**Live dashboard:** [Explore the interactive application](https://housing-affordability-27j4jzsrtskaqvfn4otn8t.streamlit.app/)
+
+**Source code and datasets:** [GitHub repository](https://github.com/YashviBhansali/Housing-Affordability)
+
 ## Research question
 
 How have housing affordability trends changed in Singapore and Hong Kong since 2017, and how well can economic indicators predict housing-price growth in each market?
@@ -27,7 +31,7 @@ The cleaned country datasets are stored in `Data/Clean/`. The dashboard reads th
 3. Calculated a relative affordability indicator: price index divided by median-income index, multiplied by 100.
 4. Used year-on-year housing-price growth as the predictive modelling target.
 5. Compared a naive baseline, Ordinary Least Squares (OLS), scaled Ridge Regression, and Random Forest.
-6. Evaluated the models using four-fold rolling-origin cross-validation and RMSE, measured in percentage points.
+6. Evaluated the main model comparison using four-fold rolling-origin cross-validation and RMSE, measured in percentage points.
 
 ## Findings
 
@@ -45,7 +49,7 @@ This is a comparison of relative index movements. It is not an absolute ranking 
 
 ### Predictive modelling
 
-Four-fold rolling-origin cross-validation results (RMSE in percentage points; lower is better):
+Main four-fold rolling-origin cross-validation results (RMSE in percentage points; lower is better):
 
 | Model | Singapore | Hong Kong |
 |---|---:|---:|
@@ -56,11 +60,11 @@ Four-fold rolling-origin cross-validation results (RMSE in percentage points; lo
 
 Random Forest recorded the lowest mean RMSE in Singapore at 3.03, narrowly ahead of Ridge at 3.07. Ridge performed best in Hong Kong at 4.79. All three model approaches improved on the naive baseline on average in this experiment.
 
-The 0.04 percentage-point difference between the two leading Singapore models is very small and should not be interpreted as a decisive performance advantage. Results also varied across validation folds.
+The 0.04 percentage-point difference between the two leading Singapore models is very small and should not be interpreted as a decisive performance advantage. Results also varied across validation folds. A separate five-fold experiment is shown separately because its validation design differs; its scores should not be pooled with the main four-fold results.
 
 ## Interactive dashboard
 
-The Streamlit dashboard presents the work in four sections:
+The deployed Streamlit dashboard presents the work in four sections:
 
 - **Overview:** research context and headline findings.
 - **Affordability Analysis:** price, income, and relative affordability trends.
@@ -72,10 +76,11 @@ The application is built with Streamlit and Plotly, using pandas and NumPy for d
 ## Limitations and interpretation
 
 - Each market has only 36 quarterly observations, which limits the reliability and generalisability of predictive models.
+- The underlying housing-price indicators differ in market coverage and methodology between Singapore and Hong Kong. The comparison is most informative as an examination of relative trends within each market, rather than a direct comparison of absolute housing affordability.
 - Model performance can vary with the selected features, preprocessing, training windows, and validation design.
 - Economic indicators that move alongside housing prices are not necessarily causal drivers.
 - The relative index measure does not account for housing quality, household composition, mortgage terms, taxes, transaction costs, or differences across property segments.
-- Cross-validation RMSE describes performance on the selected historical folds; it does not guarantee future forecasting accuracy.
+- Cross-validation RMSE describes performance on the selected historical folds; it does not guarantee future forecasting accuracy or establish generalisable forecasting superiority.
 
 ## Tools
 
@@ -83,7 +88,7 @@ Python · pandas · NumPy · scikit-learn · Streamlit · Plotly · GitHub
 
 ## What I developed
 
-This project involved collecting and preparing public datasets, constructing comparable indicators across two markets, implementing and evaluating predictive models, and translating the analysis into an interactive dashboard. It strengthened my experience in data cleaning, exploratory analysis, time-aware model validation, visual communication, and building a deployable data application.
+This project involved collecting and preparing public datasets, constructing relative indicators across two markets, implementing and evaluating predictive models, and translating the analysis into an interactive dashboard. It strengthened my experience in data cleaning, exploratory analysis, time-aware model validation, visual communication, and building a deployable data application.
 
 ## Repository
 
